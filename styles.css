@@ -8,13 +8,18 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #9a46e9, #ffffff);
+    background: linear-gradient(to bottom, #9a46e9, #000000);
     color: #333;
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
 
-
+.index-img {
+    width: 100%;  /* Faz a imagem ocupar toda a largura disponível */
+    max-width: 700px; /* Define um limite máximo para evitar que fique exageradamente grande */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+}
 
 /* Certificados */
 
@@ -293,7 +298,7 @@ main {
         opacity: 0;
     }
     80% {
-        transform: translateX(calc(100vw - 550px)); /* Ajusta para parar antes da borda */
+        transform: translateX(calc(100vw - 1200px)); /* Ajusta para parar antes da borda */
         opacity: 1;
     }
     100% {
@@ -313,7 +318,7 @@ main {
 /* Estilizando a Sidebar */
 .sidebar {
     width: 250px;
-    background-color: #d197e9; /* Fundo escuro para a sidebar */
+    background-color: #69437a; /* Fundo escuro para a sidebar */
     padding: 20px;
     height: 100vh; /* Altura da tela inteira */
     position: fixed;
@@ -342,19 +347,19 @@ main {
 /* Estilo dos links na Sidebar */
 .sidebar ul li a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: 18px; /* Tamanho de fonte mais confortável */
     display: block;
     padding: 15px 20px; /* Mais espaçamento interno para os itens */
     border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
-    background: rgba(255, 255, 0, 0.1); /* Fundo claro, sem ser opaco */
+    background: rgba(255, 255, 255, 0.1); /* Fundo claro, sem ser opaco */
     transition: all 0.3s ease; /* Transição suave */
 }
 
 /* Efeito de hover nos links */
 .sidebar ul li a:hover {
-    background: linear-gradient(135deg, #000000, #ffe204); /* Gradiente suave em hover */
+    background: linear-gradient(135deg, #76499b, #502362); /* Gradiente suave em hover */
     transform: translateX(10px); /* Animação para mover os links para a direita */
     box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); /* Sombra ao passar o mouse */
 }
@@ -376,7 +381,7 @@ main {
 main {
     flex: 1;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(241, 238, 238, 0.8);
     border-radius: 10px;
 }
 
@@ -648,14 +653,14 @@ form textarea {
 /* Ilustracao de Amanda */
 .icone-abaixo-menu {
     text-align: center;
-    margin-top: 150px; /* Aumentando o valor para mover mais para baixo */
+    margin-top: 380px; /* Aumentando o valor para mover mais para baixo */
     font-size: 30px; /* Ajuste do tamanho */
     color: #6a4cff; /* Cor do ícone */
 }
 
 
 .icone-abaixo-menu img {
-    width: 300px; /* Ajuste o tamanho do ícone */
+    width: 480px; /* Ajuste o tamanho do ícone */
     height: auto;
 }
 
@@ -707,51 +712,104 @@ footer {
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-    color: #ffffff;
+    color: #333;
 }
 
 /* Estilo do header */
 header {
-    background-color: #6a0dad; /* roxo */
+    background-color: #6a0dad; /* Roxo */
     padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    color: white;
-    font-size: 2rem;
+header .logo {
+    max-width: 150px;
 }
 
-/* Navegação */
-nav ul {
-    list-style-type: none;
+header .icone-animado {
+    max-width: 50px;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: yellow; /* amarelo */
-    font-size: 1.1rem;
-}
-
-/* Estilo da seção de conteúdo */
-#content {
-    background-color: white;
+/* Layout principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#content h2 {
-    color: #6a0dad;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
 }
-  
 
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6a0dad;
+    font-weight: bold;
+}
+
+/* Ícone abaixo do menu */
+.icone-abaixo-menu img {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+/* Área principal */
+main {
+    flex: 1;
+}
+
+/* Seções lado a lado */
+.sections-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo das seções */
+.section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Cada seção ocupa 30% do espaço */
+    min-width: 280px;
+}
+
+.section h2 {
+    color: #6a0dad;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section img.imagem-titulo {
+    max-width: 30px;
+}
+
+/* Footer */
+footer {
+    background-color: #6a0dad;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
 }
 
